@@ -8,7 +8,7 @@ Summary:	%{_pearname} - Package to represent and manipulate Polynomial equations
 Summary(pl):	%{_pearname} - Pakiet do wy¶wietlania oraz obróbki równañ wielomianowych
 Name:		php-pear-%{_pearname}
 Version:	0.1.0
-Release:	1
+Release:	2
 License:	BSD
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
@@ -19,8 +19,6 @@ BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 Requires:	php-pear
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_noautoreq	'pear(Math/Numerical/RootFinding.*)'
 
 %description
 The class Math_Polynomial represents Polynomial equations built from
@@ -42,6 +40,20 @@ Klasa Math_PolynomialOp definiuje operacje takie jak dodawanie,
 mno¿enie czy dzielenie na obiektach klasy Math_Polynomial.
 
 Ta klasa ma w PEAR status: %{_status}.
+
+%package tests
+Summary:	Tests for PEAR::%{_pearname}
+Summary(pl):	Testy dla PEAR::%{_pearname}
+Group:		Development/Languages/PHP
+Requires:	%{name} = %{version}-%{release}
+AutoReq:	no
+AutoProv:	no
+
+%description tests
+Tests for PEAR::%{_pearname}.
+
+%description tests -l pl
+Testy dla PEAR::%{_pearname}.
 
 %prep
 %pear_package_setup
@@ -66,5 +78,8 @@ fi
 %{php_pear_dir}/Math/Polynomial.php
 %{php_pear_dir}/Math/PolynomialOp.php
 %{php_pear_dir}/Math/doc/Polynomial_examples.php
-%{php_pear_dir}/Math/test/PolynomialTest.php
 %{php_pear_dir}/Math/Polynomial/PolynomialTerm.php
+
+%files tests
+%defattr(644,root,root,755)
+%{php_pear_dir}/Math/test/PolynomialTest.php
