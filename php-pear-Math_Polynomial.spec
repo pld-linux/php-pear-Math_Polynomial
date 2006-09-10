@@ -32,7 +32,7 @@ In PEAR status of this package is: %{_status}.
 
 %description -l pl
 Klasa Math_Polynomial przedstawia równania wielomianowe stworzone z
-³añcuców znaków lub z innych obiektów klasy Math_Polynomial oraz
+³añcuchów znaków lub z innych obiektów klasy Math_Polynomial oraz
 umo¿liwia wy¶wietlenie pewnych podstawowych informacji na temat
 ka¿dego równania.
 
@@ -78,6 +78,7 @@ fi
 %{php_pear_dir}/Math/Polynomial.php
 %{php_pear_dir}/Math/PolynomialOp.php
 %{php_pear_dir}/Math/doc/Polynomial_examples.php
+%dir %{php_pear_dir}/Math/Polynomial
 %{php_pear_dir}/Math/Polynomial/PolynomialTerm.php
 
 %files tests
