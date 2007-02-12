@@ -5,7 +5,7 @@
 %define		_pearname	Math_Polynomial
 
 Summary:	%{_pearname} - Package to represent and manipulate Polynomial equations
-Summary(pl):	%{_pearname} - Pakiet do wy∂wietlania oraz obrÛbki rÛwnaÒ wielomianowych
+Summary(pl.UTF-8):   %{_pearname} - Pakiet do wy≈õwietlania oraz obr√≥bki r√≥wna≈Ñ wielomianowych
 Name:		php-pear-%{_pearname}
 Version:	0.1.0
 Release:	2
@@ -30,20 +30,20 @@ objects such as add, multiply, divide, etc.
 
 In PEAR status of this package is: %{_status}.
 
-%description -l pl
-Klasa Math_Polynomial przedstawia rÛwnania wielomianowe stworzone z
-≥aÒcuchÛw znakÛw lub z innych obiektÛw klasy Math_Polynomial oraz
-umoøliwia wy∂wietlenie pewnych podstawowych informacji na temat
-kaødego rÛwnania.
+%description -l pl.UTF-8
+Klasa Math_Polynomial przedstawia r√≥wnania wielomianowe stworzone z
+≈Ça≈Ñcuch√≥w znak√≥w lub z innych obiekt√≥w klasy Math_Polynomial oraz
+umo≈ºliwia wy≈õwietlenie pewnych podstawowych informacji na temat
+ka≈ºdego r√≥wnania.
 
 Klasa Math_PolynomialOp definiuje operacje takie jak dodawanie,
-mnoøenie czy dzielenie na obiektach klasy Math_Polynomial.
+mno≈ºenie czy dzielenie na obiektach klasy Math_Polynomial.
 
 Ta klasa ma w PEAR status: %{_status}.
 
 %package tests
 Summary:	Tests for PEAR::%{_pearname}
-Summary(pl):	Testy dla PEAR::%{_pearname}
+Summary(pl.UTF-8):   Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
 Requires:	%{name} = %{version}-%{release}
 AutoReq:	no
@@ -52,7 +52,7 @@ AutoProv:	no
 %description tests
 Tests for PEAR::%{_pearname}.
 
-%description tests -l pl
+%description tests -l pl.UTF-8
 Testy dla PEAR::%{_pearname}.
 
 %prep
