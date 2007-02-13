@@ -5,7 +5,7 @@
 %define		_pearname	Math_Polynomial
 
 Summary:	%{_pearname} - Package to represent and manipulate Polynomial equations
-Summary(pl.UTF-8):   %{_pearname} - Pakiet do wyświetlania oraz obróbki równań wielomianowych
+Summary(pl.UTF-8):	%{_pearname} - Pakiet do wyświetlania oraz obróbki równań wielomianowych
 Name:		php-pear-%{_pearname}
 Version:	0.1.0
 Release:	2
@@ -43,7 +43,7 @@ Ta klasa ma w PEAR status: %{_status}.
 
 %package tests
 Summary:	Tests for PEAR::%{_pearname}
-Summary(pl.UTF-8):   Testy dla PEAR::%{_pearname}
+Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
 Requires:	%{name} = %{version}-%{release}
 AutoReq:	no
