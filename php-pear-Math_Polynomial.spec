@@ -8,7 +8,7 @@ Summary:	%{_pearname} - Package to represent and manipulate Polynomial equations
 Summary(pl.UTF-8):	%{_pearname} - Pakiet do wyświetlania oraz obróbki równań wielomianowych
 Name:		php-pear-%{_pearname}
 Version:	0.1.0
-Release:	3
+Release:	4
 License:	BSD
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
@@ -62,6 +62,9 @@ Testy dla PEAR::%{_pearname}.
 install -d docs/%{_pearname}
 mv ./%{php_pear_dir}/%{_class}/doc/* docs/%{_pearname}
 
+install -d ./%{php_pear_dir}/tests/%{_pearname}
+mv ./%{php_pear_dir}/{%{_class}/test/*,tests/%{_pearname}}
+
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{php_pear_dir}
@@ -87,4 +90,4 @@ fi
 
 %files tests
 %defattr(644,root,root,755)
-%{php_pear_dir}/Math/test/PolynomialTest.php
+%{php_pear_dir}/tests/%{_pearname}
