@@ -3,12 +3,11 @@
 %define		_subclass	Polynomial
 %define		_status		beta
 %define		_pearname	Math_Polynomial
-
 Summary:	%{_pearname} - Package to represent and manipulate Polynomial equations
 Summary(pl.UTF-8):	%{_pearname} - Pakiet do wyświetlania oraz obróbki równań wielomianowych
 Name:		php-pear-%{_pearname}
 Version:	0.1.0
-Release:	6
+Release:	7
 License:	BSD
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
@@ -17,8 +16,12 @@ URL:		http://pear.php.net/package/Math_Polynomial/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 Requires:	php-pear
+Suggests:	php-pear-Math_Numerical_RootFinding >= 0.3.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+# exclude optional dependencies
+%define		_noautoreq	pear(Math/Numerical/RootFinding.*)
 
 %description
 The class Math_Polynomial represents Polynomial equations built from
@@ -46,8 +49,8 @@ Summary:	Tests for PEAR::%{_pearname}
 Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
 Requires:	%{name} = %{version}-%{release}
-AutoReq:	no
 AutoProv:	no
+AutoReq:	no
 
 %description tests
 Tests for PEAR::%{_pearname}.
