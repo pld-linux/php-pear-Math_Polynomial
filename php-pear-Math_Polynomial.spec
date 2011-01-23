@@ -18,6 +18,7 @@ BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	php-pear
 Suggests:	php-pear-Math_Numerical_RootFinding >= 0.3.0
+Obsoletes:	php-pear-Math_Polynomial-tests
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -44,20 +45,6 @@ Klasa Math_PolynomialOp definiuje operacje takie jak dodawanie,
 mnożenie czy dzielenie na obiektach klasy Math_Polynomial.
 
 Ta klasa ma w PEAR status: %{_status}.
-
-%package tests
-Summary:	Tests for PEAR::%{_pearname}
-Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
-Group:		Development/Languages/PHP
-Requires:	%{name} = %{version}-%{release}
-AutoProv:	no
-AutoReq:	no
-
-%description tests
-Tests for PEAR::%{_pearname}.
-
-%description tests -l pl.UTF-8
-Testy dla PEAR::%{_pearname}.
 
 %prep
 %pear_package_setup
@@ -91,7 +78,3 @@ fi
 %{php_pear_dir}/Math/PolynomialOp.php
 %dir %{php_pear_dir}/Math/Polynomial
 %{php_pear_dir}/Math/Polynomial/PolynomialTerm.php
-
-%files tests
-%defattr(644,root,root,755)
-%{php_pear_dir}/tests/%{_pearname}
